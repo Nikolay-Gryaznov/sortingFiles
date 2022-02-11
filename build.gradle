@@ -1,6 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
 }
+
+
+mainClassName = 'sortClasses.SortIt'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -16,4 +20,13 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    baseName('Sort-it')
+    version('0.1.0')
+    manifest {
+        attributes "Main-Class": "sortClasses.SortIt"
+    }
+
 }

@@ -1,3 +1,5 @@
+package sortClasses;
+
 public class MergeSort {
     /**
      * функция, реализующая сортировку слиянием целочисленного массива

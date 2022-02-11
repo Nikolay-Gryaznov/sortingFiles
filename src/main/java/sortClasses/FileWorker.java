@@ -1,3 +1,5 @@
+package sortClasses;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -5,16 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class FileWorker {
-    /**
-     * функция проверки .txt расширения
-     *
-     * @param fileName название файла
-     */
-    public static boolean checkTxtType(String fileName) {
-        int index = fileName.lastIndexOf('.');
-        if (index < 0) return false;
-        return fileName.substring(index).equals(".txt");
-    }
 
     /**
      * функция проверки равильности типа для одного элемента
@@ -62,7 +54,7 @@ public class FileWorker {
             }
             bufferedReader.close();
         } catch (Exception e) {
-            errorMessage.append("Файл ").append(file.getName()).append(" не удалось прочитать\n");
+            errorMessage.append("File ").append(file.getName()).append(" not found\n");
         }
 
         if (integerList.size() != 0) {
@@ -140,14 +132,14 @@ public class FileWorker {
             try {
                 Files.delete(Paths.get(outFileName));
             } catch (IOException x) {
-                errorMessage.append("Ошибка при удаления файла");
+                errorMessage.append("Error writing output");
                 return;
             }
         }
         try {
             boolean a = outFile.createNewFile();
         } catch (Exception e) {
-            errorMessage.append("Ошибка при создании файла");
+            errorMessage.append("Error creating the file");
             return;
         }
         try {
@@ -157,7 +149,7 @@ public class FileWorker {
             }
             fw.close();
         } catch (Exception e) {
-            errorMessage.append("Ошибка про записи данных");
+            errorMessage.append("Error writing output");
         }
     }
 

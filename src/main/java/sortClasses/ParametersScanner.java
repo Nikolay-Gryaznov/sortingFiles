@@ -1,3 +1,5 @@
+package sortClasses;
+
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
@@ -70,16 +72,16 @@ public class ParametersScanner {
                 throw new Exception();
             }
         } catch (NullPointerException e) {
-            errorMessage.append("Ошибка: Вы не ввели тип данных");
+            errorMessage.append("Error: You have not entered the data type");
             return null;
         } catch (EmptyStackException e) {
-            errorMessage.append("Ошибка: Вы не ввели имена входных файлов");
+            errorMessage.append("Error: You have not entered the names of the input files");
             return null;
         } catch (RepeatFlagsException e) {
-            errorMessage.append("Ошибка: Вы ввели несколько раз флаги на режим или тип данных");
+            errorMessage.append("Error: You have entered the flags for the mode or data type several times");
             return null;
         } catch (Exception e) {
-            errorMessage.append("Ошибка: Вы ввели выходной файл в аргументы входящих");
+            errorMessage.append("Error: You have entered the output file in the incoming arguments");
             return null;
         }
 
